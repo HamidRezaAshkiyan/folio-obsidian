@@ -1,0 +1,21 @@
+{
+  "name": "folio-bujo",
+  "version": "0.1.0",
+  "description": "Obsidian plugin providing a Bullet Journal view and live rendering for the Folio convention.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "test": "node --test tests/model.test.mjs"
+  },
+  "devDependencies": {
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.28.0",
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "^1.7.2",
+    "tslib": "^2.7.0",
+    "typescript": "^5.6.3"
+  }
+}

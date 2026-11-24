@@ -1,0 +1,10 @@
+{
+  "id": "folio-bujo",
+  "name": "Folio Bullet Journal",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Bullet Journal view and live Markdown rendering for the Folio vault convention, supporting signifiers, spaces, RTL, and carry-to-paper tracking.",
+  "author": "HamidRezaAshkiyan",
+  "authorUrl": "https://github.com/HamidRezaAshkiyan",
+  "isDesktopOnly": false
+}

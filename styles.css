@@ -1,0 +1,690 @@
+/* ============================================================
+   Folio Bullet Journal — Obsidian Plugin Styles
+   Adapts to Obsidian Light & Dark themes with Folio's palette
+   ============================================================ */
+
+.theme-dark {
+  --folio-action: #b1c7f1;
+  --folio-event: #e5c281;
+  --folio-emotion: #ffb4a8;
+  --folio-note: #c4c6cf;
+  --folio-priority: #ffb4a8;
+  --folio-inspiration: #e5c281;
+  --folio-paper-no-bg: rgba(255, 180, 168, 0.14);
+  --folio-paper-no-fg: #ffb4a8;
+  --folio-paper-ok-bg: rgba(177, 199, 241, 0.14);
+  --folio-paper-ok-fg: #b1c7f1;
+}
+
+.theme-light {
+  --folio-action: #2b579a;
+  --folio-event: #9a6700;
+  --folio-emotion: #b84a39;
+  --folio-note: #5c606b;
+  --folio-priority: #b84a39;
+  --folio-inspiration: #9a6700;
+  --folio-paper-no-bg: rgba(184, 74, 57, 0.12);
+  --folio-paper-no-fg: #a13a2a;
+  --folio-paper-ok-bg: rgba(43, 87, 154, 0.12);
+  --folio-paper-ok-fg: #2b579a;
+}
+
+/* ---------- Layout ---------- */
+.folio-view-root {
+  padding: 0 !important;
+  height: 100%;
+  overflow: hidden;
+}
+
+.folio-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.folio-sidebar {
+  width: 220px;
+  min-width: 180px;
+  border-right: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 12px 8px;
+  overflow-y: auto;
+}
+
+.folio-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px 14px;
+}
+
+.folio-brand-title {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+}
+
+.folio-brand-badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--background-modifier-hover);
+  color: var(--text-muted);
+}
+
+.folio-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  padding: 12px 10px 4px;
+}
+
+.folio-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.folio-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-normal);
+  cursor: pointer;
+  text-align: left;
+  box-shadow: none;
+}
+
+.folio-nav-item:hover {
+  background: var(--background-modifier-hover);
+}
+
+.folio-nav-item.is-active {
+  background: var(--background-modifier-active-hover);
+  font-weight: 600;
+}
+
+.folio-nav-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.folio-nav-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.folio-nav-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.folio-nav-count {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.folio-nav-add {
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ---------- Main Pane ---------- */
+.folio-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 22px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.folio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.folio-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.folio-doc-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+.folio-page-pill {
+  font-size: 0.78rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.folio-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.folio-btn,
+.folio-icon-btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.folio-icon-btn {
+  padding: 5px 7px;
+}
+
+.folio-btn:hover,
+.folio-icon-btn:hover {
+  background: var(--background-modifier-hover);
+}
+
+.folio-dir-btn {
+  font-size: 0.72rem;
+  font-family: var(--font-monospace);
+}
+
+/* ---------- Rapid Log Bar ---------- */
+.folio-rapid-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+}
+
+.folio-sig-selector {
+  display: flex;
+  gap: 4px;
+}
+
+.folio-sig-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--font-monospace);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-sig-btn.is-active {
+  border-color: var(--background-modifier-border);
+  background: var(--background-primary);
+}
+
+.folio-rapid-input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 0.95rem;
+  padding: 4px 6px;
+}
+
+.folio-rapid-submit {
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---------- Filter & Tag Bar ---------- */
+.folio-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.folio-filter-pills {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.folio-pill {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--background-modifier-border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-pill.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+.folio-search-input {
+  width: 190px;
+  font-size: 0.82rem;
+}
+
+.folio-tag-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.folio-tag-chip {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--tag-color, var(--text-accent));
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-tag-chip.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+/* ---------- Stats Bar ---------- */
+.folio-stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 2px 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  margin-bottom: 10px;
+}
+
+.folio-stats-text {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.folio-carry-all-btn {
+  font-size: 0.75rem;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--folio-paper-no-bg);
+  color: var(--folio-paper-no-fg);
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* ---------- Entry Rows ---------- */
+.folio-entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.folio-entry-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  transition: background-color 120ms ease;
+}
+
+.folio-entry-row:hover {
+  background: var(--background-secondary);
+  border-color: var(--background-modifier-border);
+}
+
+.folio-entry-row.is-muted .folio-entry-text {
+  opacity: 0.58;
+  text-decoration: line-through;
+}
+
+.folio-modifier {
+  font-family: var(--font-monospace);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.folio-mod-priority {
+  color: var(--folio-priority);
+}
+
+.folio-mod-inspiration {
+  color: var(--folio-inspiration);
+}
+
+.folio-entry-sig {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-family: var(--font-monospace);
+  font-weight: 800;
+  font-size: 1.05rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-entry-sig:hover {
+  background: var(--background-modifier-hover);
+}
+
+.folio-sig-action,
+.folio-sig-migrated,
+.folio-sig-scheduled {
+  color: var(--folio-action);
+}
+
+.folio-sig-done,
+.folio-sig-cancelled,
+.folio-sig-note {
+  color: var(--folio-note);
+}
+
+.folio-sig-event {
+  color: var(--folio-event);
+}
+
+.folio-sig-emotion {
+  color: var(--folio-emotion);
+}
+
+.folio-entry-time {
+  font-family: var(--font-monospace);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.folio-entry-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.folio-entry-text[dir="rtl"] {
+  text-align: right;
+}
+
+.folio-inline-edit {
+  flex: 1;
+  font-size: 0.92rem;
+}
+
+.folio-inline-tag {
+  color: var(--tag-color, var(--text-accent));
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.folio-inline-tag:hover {
+  text-decoration: underline;
+}
+
+.folio-paper-pill {
+  font-family: var(--font-monospace);
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: none;
+}
+
+.folio-paper-pill.is-no {
+  background: var(--folio-paper-no-bg);
+  color: var(--folio-paper-no-fg);
+}
+
+.folio-paper-pill.is-ok {
+  background: var(--folio-paper-ok-bg);
+  color: var(--folio-paper-ok-fg);
+  opacity: 0.8;
+}
+
+.folio-entry-actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.folio-entry-row:hover .folio-entry-actions {
+  opacity: 1;
+}
+
+.folio-mini-btn {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-monospace);
+  font-size: 0.8rem;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-mini-btn:hover,
+.folio-mini-btn.is-active {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.folio-empty-state {
+  padding: 28px 14px;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+/* ---------- Carry to Paper Queue ---------- */
+.folio-paper-queue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.folio-paper-group {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--background-primary);
+}
+
+.folio-paper-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.folio-paper-group-title {
+  border: none;
+  background: transparent;
+  font-weight: 650;
+  font-size: 0.95rem;
+  color: var(--text-normal);
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+
+.folio-paper-group-title:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Reading View Rendering ---------- */
+.folio-reading-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 6px 0;
+}
+
+.folio-reading-row {
+  padding: 4px 6px;
+}
+
+/* ---------- Live Preview (CodeMirror 6) ---------- */
+.folio-cm-line.folio-cm-muted {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.folio-cm-sig-widget {
+  display: inline-block;
+  min-width: 1.2em;
+  text-align: center;
+  font-family: var(--font-monospace);
+  font-weight: 800;
+}
+
+.folio-cm-sig-widget.is-clickable {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.folio-cm-sig-widget.is-clickable:hover {
+  background: var(--background-modifier-hover);
+}
+
+.folio-cm-sig {
+  font-family: var(--font-monospace);
+  font-weight: 800;
+}
+
+.folio-cm-modifier {
+  font-family: var(--font-monospace);
+  font-weight: 800;
+}
+
+.folio-cm-time {
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+  color: var(--text-faint);
+}
+
+.folio-cm-paper {
+  font-family: var(--font-monospace);
+  font-size: 0.8em;
+}
+
+.folio-cm-paper.is-no {
+  color: var(--folio-paper-no-fg);
+}
+
+.folio-cm-paper.is-ok {
+  color: var(--folio-paper-ok-fg);
+}
+
+.folio-cm-paper-widget {
+  margin-inline-start: 6px;
+  vertical-align: middle;
+}
+
+/* ---------- Modals ---------- */
+.folio-modal-input {
+  width: 100%;
+  margin: 8px 0 14px;
+}
+
+.folio-sig-picker {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.folio-sig-chip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.folio-sig-chip.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+.folio-modal-item-title {
+  font-weight: 600;
+}
+
+.folio-modal-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+/* Responsive collapse on narrow panes */
+@media (max-width: 640px) {
+  .folio-layout {
+    flex-direction: column;
+  }
+  .folio-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--background-modifier-border);
+    max-height: 180px;
+  }
+}
